@@ -3,5 +3,12 @@ type Context = {
 };
 
 export default ({ postData }: Context) => {
-  return async (data: string) => {};
+  let lastPromise = Promise.resolve();
+
+  return async (data: string) => {
+    const currentPromise = lastPromise.then(async () => await postData(data));
+    lastPromise = currentPromise;
+
+    await currentPromise;
+  };
 };

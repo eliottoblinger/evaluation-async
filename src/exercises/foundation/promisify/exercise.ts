@@ -11,4 +11,6 @@ type PromisifiedFunction<T, Args extends Array<unknown>> = (
 export default <T, Args extends Array<unknown>>(
     fn: FunctionWithCallback<T, Args>
   ): PromisifiedFunction<T, Args> =>
-  (...args) => {};
+  (...args) => {
+
+  };

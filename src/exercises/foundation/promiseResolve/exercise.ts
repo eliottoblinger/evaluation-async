@@ -1,1 +1,3 @@
-export default async <T>(value: T): Promise<T> => {};
+export default async <T>(value: T): Promise<T> => {
+  return Promise.resolve(value);
+};
